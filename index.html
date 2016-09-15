@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="portfolioApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Michael Tran | Portfolio</title>
+        <link rel="stylesheet" type="text/css" href="CSS/css.css">
+        <link rel="icon" type="image/png" href="IMG/favicon.png" sizes="32x32">
+        <script src="app/jquery-2.1.4.min.js"></script>
+        <script src="app/angular.min.js"></script>
+        <script src="app/angular-animate.min.js"></script>
+        <script src="app/angular-route.min.js"></script>
+        <script src="app/app.js"></script>
+        <script src="app/directives/projects.js"></script>
+        <script src="app/directives/project1.js"></script>
+        <script src="app/directives/project2.js"></script>
+        <script src="app/directives/project3.js"></script>
+        <script src="app/directives/project4.js"></script>
+        <script src="app/directives/project5.js"></script>
+        <script src="app/directives/trainingapp.js"></script>
+    </head>
+    
+    
+    <body>
+
+        <div id='wrapper'>
+       
+            
+            <div id="graphics">
+                
+                <div id=portal>
+                <h2>
+                    Michael <span class="lastname">Tran</span> // Web Development Portfolio
+                </h2>
+                    
+                   <a href="#/about" id="enter"><span>ENTER</span></a></li>
+
+                </div>
+                
+                
+                
+            </div>
+            
+            <nav>
+                
+                <div class="centered">
+                    
+                    <h2 id=home>
+                        
+                        <a href="#">michael<span class="lastname">Tran</span></a>
+                        
+                </h2>
+                    
+                    <ul id="menu">
+                        <li><a href="#/about" class="about">about</a></li>
+                        <li><a href="#/projects" id="projects-link">projects</a></li>
+                        <li><a href="#/resume" id="resume-link">resume</a></li>
+                        <li><a href="#/contact" class="contact">contact</a></li>
+                </ul>
+                    
+                </div>
+                
+            </nav>
+            
+            <div id="about-wrapper">
+                <div id="about">
+                    <div id='desc'>
+                        <p>
+                            WEB <span class="green">DEVELOPMENT</span> & <span class="green">DESIGN</span>
+                        </p>
+                        
+                        <ul id='skills-list'>
+                            <li class=skills>HTML<span class="orange">5</span></li>
+                            <li class=skills>CSS<span class="blue">3</span></li>
+                            <li class=skills>JAVA<span class="white">SCRIPT</span></li>
+                        </ul>
+                        
+                        <p id='me'>
+                            I have studied web development at the University of Maryland, University College, and will be graduating in May 2016 with a degree in Digital Media and Web Technology.  I want to want to develop websites and help organizations make their mark on the web.  <br><br>I am developing and designing this portfolio as my final project, but it I will update it throughout my career.  <Br><Br>Send me a message below if you'd like to get in touch.  Thank you for visiting!
+                        </p>
+
+                    </div>
+                
+               
+                
+                </div>
+            </div>
+            
+            
+            <div id="view-wrapper">
+                
+                <div ng-view class="fade">
+                
+                </div>
+                
+            </div>
+            
+            
+            <div id="contact-wrapper">
+                
+                 <div id="links">
+                
+                     <div id="link-area">
+                         
+                         
+                         <div>
+                             <img src="IMG/facebookfav.png">
+                             
+                             <p>
+                                 <a href="https://www.facebook.com/profile.php?id=100010099116002" target="_blank">FACEBOOK</a>
+                             </p>
+                         </div>
+                         
+                         <div>
+                             <img src="IMG/GitHub-Mark.png">
+                             
+                             <p>
+                                 <a href="http://github.com/michaelt437" target="_blank">GITHUB</a>
+                             </p>
+                         </div>
+                         
+                         <div>
+                             <img src="IMG/twitter_favicon.png">
+                             
+                             <p>
+                                 <a target="_blank" href="http://www.twitter.com/_eyeofagamotto">TWITTER</a>
+                             </p>
+                         </div>
+                         
+                         
+                     </div>
+               
+                
+                </div>
+                
+                <div id="message-me">
+                    
+                    <div id='email'>
+                        CONTACT
+                        
+                            <a href="mailto:michaelt437@gmail.com">michaelt437@gmail.com</a>
+                        
+                    </div>
+                    
+                    
+                    
+                </div>
+                
+                
+            </div>
+            
+           
+            
+            
+           
+
+        </div>
+
+    </body>
+    
+    <script>
+        
+        $(window).on('hashchange', function(e){
+            
+            var location = window.location.href;
+            var home = 'http://michaeltran.netlify.com/#';
+            var projects = 'http://michaeltran.netlify.com/#/projects';
+            var about = 'http://michaeltran.netlify.com/#/about';
+            var resume = 'http://michaeltran.netlify.com/#/resume';
+            var contact = 'http://michaeltran.netlify.com/#/contact';
+            var proj1 = 'http://michaeltran.netlify.com/#/projects/html1';
+            var proj2 = 'http://michaeltran.netlify.com/#/projects/flash';
+            var proj3 = 'http://michaeltran.netlify.com/#/projects/html2';
+            var proj4 = 'http://michaeltran.netlify.com/#/projects/javascript';
+            var proj5 = 'http://michaeltran.netlify.com/#/projects/python';
+            var catapp = 'http://michaeltran.netlify.com/#/projects/catapp';
+            
+            if(location == home){
+                $('#graphics').slideDown(1000);
+                
+                setTimeout(function(){
+                    $('#portal').animate({
+                    'opacity':'1'
+                    },500);
+                }, 1000);
+                
+                $('nav').css({'display':'none'});
+                $('#about').css({'display':'none'});
+                $('#desc').css({'opacity':'0'});
+                $('#contact-wrapper').css({'display':'none'});
+                $('#about').css({'opacity':'0'});
+                $('#contact-wrapper').css({'opacity':'0'});
+            }
+            
+            if(location == about){
+                $('#view-wrapper').css({'height':'0'});
+                $('html, body').animate({
+                    scrollTop: '0'
+                });
+                $('#view-wrapper').css({'display':''});
+            }
+            
+            if(location == projects){
+                setTimeout(function(){
+                    var h = $('.fade').height();
+                    $('#view-wrapper').css({'height': h+50});
+                }, 400);
+            
+                setTimeout(function(){
+
+                    var topH = $("#view-wrapper").offset().top;
+                    var ttop = topH - 50;
+
+                    $('html, body').animate({
+                        scrollTop: ttop
+                    }, 500);
+
+                },500);
+            }
+            
+            if(location == resume){
+                setTimeout(function(){
+                    var h = $('.fade').height();
+                    $('#view-wrapper').css({'height': h-50});
+                }, 400);
+            
+                setTimeout(function(){
+
+                    var topH = $("#view-wrapper").offset().top;
+                    var ttop = topH - 50;
+
+                    $('html, body').animate({
+                        scrollTop: ttop
+                    }, 500);
+
+                },500);
+            }
+            
+            if(location == contact){
+                $('#view-wrapper').css({'height':'0'});
+                $('html, body').animate({
+                    scrollTop: '1000'
+                });
+                $('#view-wrapper').css({'display':''});
+            }
+            
+            if(location == proj1 || location == proj2 || location == proj3 || location == proj4 || location == proj5 || location == catapp){
+                setTimeout(function(){
+                    var h = $('.fade').height();
+                    $('#view-wrapper').css({'height': h-100});
+                }, 400);
+
+                setTimeout(function(){
+
+                    var topH = $("#view-wrapper").offset().top;
+                    var ttop = topH - 50;
+
+                    $('html, body').animate({
+                        scrollTop: ttop
+                    }, 500);
+
+                },500);
+            }
+            
+            
+            
+            
+            
+        });
+        
+        
+        
+        $('#enter').click(function(){
+            
+            $('#portal').animate({
+                'opacity':'0'
+            }, 500);
+            
+            $('#graphics').delay(500).slideUp(1000);
+            
+            setTimeout(function(){
+                $('nav').css({'display':'block'});
+                $('#about').css({'display':'block'});
+                $('#contact-wrapper').css({'display':'block'});
+            }, 1000);
+            
+        
+            
+            setTimeout(function(){
+                
+                $('#home').css({
+                    'opacity':'1',
+                    'visibility':'visible'
+                });       
+                
+                $('nav').css({
+                    'visibility':'visible',
+                    'opacity':'1',
+                    'position':'fixed',
+                    'top':'0'
+                });
+                
+            }, 1700);
+            
+            setTimeout(function(){
+                $('#about').css({'opacity':'1'});
+                $('#contact-wrapper').css({'opacity':'1'});
+            }, 1800);
+            
+            setTimeout(function(){
+                $('#desc').css({'opacity':'1'});
+            },2500);
+           
+            
+        });
+        
+        
+        
+        $('#projects-link').click(function(){
+            
+            setTimeout(function(){
+                var h = $('.fade').height();
+                $('#view-wrapper').css({'height': h+50});
+            }, 400);
+            
+            setTimeout(function(){
+                
+                var topH = $("#view-wrapper").offset().top;
+                var ttop = topH - 50;
+                
+                $('html, body').animate({
+                    scrollTop: ttop
+                }, 500);
+                
+            },500);
+
+        });
+        
+        $('#resume-link').click(function(){
+            
+            setTimeout(function(){
+                var h = $('.fade').height();
+                $('#view-wrapper').css({'height': h-50});
+            }, 400);
+            
+            setTimeout(function(){
+                
+                var topH = $("#view-wrapper").offset().top;
+                var ttop = topH - 50;
+                
+                $('html, body').animate({
+                    scrollTop: ttop
+                }, 500);
+                
+            },500);
+
+        });
+        
+        
+        
+        
+        $('.about').click(function(){
+            $('#view-wrapper').css({'height':'0'});
+            $('html, body').animate({
+                scrollTop: '0'
+            });
+            $('#view-wrapper').css({'display':''});
+        });
+        
+        $('.contact').click(function(){
+            $('#view-wrapper').css({'height':'0'});
+            $('html, body').animate({
+                scrollTop: '1000'
+            });
+            $('#view-wrapper').css({'display':''});
+        });
+
+    </script>
+</html>
